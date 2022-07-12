@@ -1,0 +1,90 @@
+-- [Super Sonic Avatar] --
+
+-- Changes your avatar to become the Blue Blur, Sonic... but in his Super form.
+
+-- Everything in this script was written by Tsuagon (except for the parts that were converted by ttyyuu12345's model to script converter).
+
+----------------------------------------------------------------------------------------------------
+
+-- Player Stuff --
+
+local player = game:GetService("Players").LocalPlayer
+local char = player.Character
+local head = char.Head
+local rarm = char["Right Arm"]
+local larm = char["Left Arm"]
+local rleg = char["Right Leg"]
+local lleg = char["Left Leg"]
+local torso = char.Torso
+local root = char.HumanoidRootPart
+local humanoid = char.Humanoid
+
+local mouse = player:GetMouse()
+
+----------------------------------------------------------------------------------------------------
+
+-- General Stuff -- 
+
+-- Super Sonic Avatar
+
+local Sonic = game:GetObjects('rbxassetid://10196099630')[1]
+Sonic.Parent = workspace
+
+for _, v in pairs(char:GetDescendants()) do
+    if v:IsA("BasePart") then
+        v.Transparency = 1
+    end
+end
+for _, v in pairs(char:GetDescendants()) do
+    if v:IsA("Decal") then
+        v.Transparency = 1
+    end
+end
+
+for _, v in pairs(Sonic:GetDescendants()) do
+    if v:IsA("BasePart") then
+        v.CanCollide = false
+    end
+end
+
+local headweld = Instance.new("Weld")
+headweld.Parent = Sonic.Head
+headweld.Part0 = Sonic.Head
+headweld.Part1 = head
+headweld.C0 = head.CFrame
+headweld.C1 = head.CFrame
+
+local torsoweld = Instance.new("Weld")
+torsoweld.Parent = Sonic.Torso
+torsoweld.Part0 = Sonic.Torso
+torsoweld.Part1 = torso
+torsoweld.C0 = torso.CFrame
+torsoweld.C1 = torso.CFrame
+
+local rarmweld = Instance.new("Weld")
+rarmweld.Parent = Sonic["Right Arm"]
+rarmweld.Part0 = Sonic["Right Arm"]
+rarmweld.Part1 = rarm
+rarmweld.C0 = rarm.CFrame
+rarmweld.C1 = rarm.CFrame
+
+local larmweld = Instance.new("Weld")
+larmweld.Parent = Sonic["Left Arm"]
+larmweld.Part0 = Sonic["Left Arm"]
+larmweld.Part1 = larm
+larmweld.C0 = larm.CFrame
+larmweld.C1 = larm.CFrame
+
+local rlegweld = Instance.new("Weld")
+rlegweld.Parent = Sonic["Right Leg"]
+rlegweld.Part0 = Sonic["Right Leg"]
+rlegweld.Part1 = rleg
+rlegweld.C0 = rleg.CFrame
+rlegweld.C1 = rleg.CFrame
+
+local llegweld = Instance.new("Weld")
+llegweld.Parent = Sonic["Left Leg"]
+llegweld.Part0 = Sonic["Left Leg"]
+llegweld.Part1 = lleg
+llegweld.C0 = lleg.CFrame
+llegweld.C1 = lleg.CFrame
